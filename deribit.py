@@ -1,6 +1,6 @@
 import requests, json, time
 
-ENDPOINT = "https://test.deribit.com/api/v2/public/get_book_summary_by_currency"
+ENDPOINT = "https://deribit.com/api/v2/public/get_book_summary_by_currency"
 INTERVAL = 15*60
 PARAMS_BTC = {"currency" : "BTC", "kind" : "option"}
 PARAMS_ETH = {"currency" : "ETH", "kind" : "option"}
