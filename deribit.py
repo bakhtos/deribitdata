@@ -27,7 +27,7 @@ def main(data_btc, data_eth):
 	while True:
 		get_data(PARAMS_BTC, data_btc)
 		get_data(PARAMS_ETH, data_eth)	
-		if(time.localtime().tm_hour == 23 and time.localtime().tm_min>45):
+		if(time.localtime().tm_hour == 23 and time.localtime().tm_min>=45):
 			save_file(data_btc, "BTC ")
 			save_file(data_eth, "ETH ")
 		time.sleep(INTERVAL)
