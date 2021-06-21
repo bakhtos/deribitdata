@@ -7,10 +7,14 @@ PARAMS_ETH = {"currency" : "ETH", "kind" : "option"}
 
 
 def get_data(params, data):
-	response = requests.get(ENDPOINT, params = params)
+	try:
+		response = requests.get(ENDPOINT, params = params)
+	except:
+		print(time.asctime(), params["currency"], "error when requesting files")
+		return
 	response_json = response.json()
 	if "error" in response_json:
-		print(time.asctime(), params["currency"], "error when requesting files")
+		print(time.asctime(), params["currency"], "error within response")
 		data[response_json['usOut']] = response_json["error"]
 	else:
 		print(time.asctime(), params["currency"], "data acquisition successful")
